@@ -1,0 +1,194 @@
+/* =====================================================
+   TEMA FAVORITE PEOPLE · laranja, roxo, lilás, amarelo, verde, azul, vermelho
+   Carrega depois de styles.css e sobrepõe-se a ele.
+   ===================================================== */
+:root {
+  --green: #2e9e5b;
+  --deep: #3b1f6b;
+  --mauve: #6f3aa3;
+  --sun: #ffc93c;
+  --teal: #ff7a2f;
+  --cream: #fff4e0;
+  --ink: #2a1a4a;
+  --muted: #7a6a9a;
+  --lilac: #cdb8f2;
+  --orange: #ff7a2f;
+  --red: #e5372e;
+  --blue: #1e2a78;
+  --radius: 24px;
+}
+body { font-family: 'Fredoka', system-ui, sans-serif; background: #ff7a2f; color: var(--ink); }
+.app { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
+
+.bg {
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='64' viewBox='0 0 120 64'%3E%3Cpath d='M0 32 q30 -30 60 0 t60 0' fill='none' stroke='%23ffffff' stroke-opacity='.17' stroke-width='7'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, #ffb067 0%, #ff8a3d 35%, #ff6f26 70%, #e8561c 100%);
+}
+.bg::after {
+  height: 22px; opacity: 1; -webkit-mask-image: none; mask-image: none;
+  background-image: conic-gradient(var(--red) 25%, var(--blue) 0 50%, var(--red) 0 75%, var(--blue) 0);
+  background-size: 22px 22px; border-top: 3px solid var(--ink);
+}
+
+/* tipografia */
+.display { font-family: 'Bagel Fat One', 'Fredoka', sans-serif; font-weight: 400; letter-spacing: 0; color: #fff; text-shadow: 3px 3px 0 var(--ink); line-height: 1.05; }
+.display span { color: var(--sun); font-weight: 400; text-shadow: 2px 2px 0 var(--ink); }
+.card .display, .letter .display { color: var(--deep); text-shadow: none; }
+.lead { color: #fff; text-shadow: 0 1px 0 rgba(42, 26, 74, 0.45); font-weight: 500; }
+.lead b { color: var(--ink); text-shadow: none; background: var(--sun); padding: 0 6px; border-radius: 6px; }
+.card .lead, .letter .lead { color: var(--ink); text-shadow: none; }
+.card .lead b { color: var(--ink); background: #ffe08a; }
+.card.solved-card .lead { color: #fff; text-shadow: 0 1px 0 rgba(42, 26, 74, 0.45); }
+.eyebrow { color: var(--ink); background: var(--sun); display: inline-block; padding: 3px 10px; border-radius: 999px; border: 2px solid var(--ink); font-size: 11px; }
+.eyebrow.dark { background: none; border: 0; padding: 0; color: var(--mauve); }
+.tiny { color: #fff; opacity: 0.95; text-shadow: 0 1px 0 rgba(42, 26, 74, 0.4); }
+.muted { color: var(--muted); }
+
+/* cartões "autocolante" */
+.card { background: var(--cream); border: 3px solid var(--ink); box-shadow: 6px 7px 0 var(--ink); border-radius: var(--radius); }
+.card h3 { font-family: 'Bagel Fat One', sans-serif; font-weight: 400; color: var(--deep); font-size: 22px; }
+.card.solved-card { background: transparent; border: 0; box-shadow: none; }
+
+/* botões */
+.btn { border: 3px solid var(--ink); font-family: 'Fredoka', sans-serif; font-weight: 700; letter-spacing: 0.01em; }
+.btn.primary { background: var(--sun); color: var(--ink); box-shadow: 0 5px 0 var(--ink); }
+.btn.primary:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 7px 0 var(--ink); background: #ffd45f; }
+.btn.primary:active:not(:disabled) { transform: translateY(5px); box-shadow: 0 0 0 var(--ink); }
+.btn:disabled { opacity: 0.55; box-shadow: 0 3px 0 var(--ink); }
+.btn.ghost { background: var(--lilac); color: var(--ink); backdrop-filter: none; box-shadow: 0 4px 0 var(--ink); border: 3px solid var(--ink); }
+.btn.ghost:hover { background: #dccbf7; }
+.btn.ghost:active { transform: translateY(4px); box-shadow: 0 0 0 var(--ink); }
+.btn.mini { background: #fff; color: var(--ink); box-shadow: 0 3px 0 var(--ink); border-width: 2.5px; }
+button:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+/* progresso */
+.progress { background: linear-gradient(180deg, #ffa357 70%, rgba(255, 163, 87, 0)); }
+.step { color: var(--ink); font-weight: 600; }
+.step .dot { background: var(--cream); border: 2.5px solid var(--ink); color: var(--ink); }
+.step::after { background: rgba(42, 26, 74, 0.25); }
+.step.now { color: var(--ink); }
+.step.now .dot { background: var(--sun); box-shadow: 3px 3px 0 var(--ink); transform: scale(1.12); }
+.step.done { color: var(--ink); }
+.step.done .dot { background: var(--green); color: #fff; box-shadow: none; }
+.step.done::after { background: var(--ink); }
+
+/* intro e cabeçalhos */
+.gift-photo { border: 4px solid var(--ink); box-shadow: 8px 9px 0 var(--ink); background: var(--lilac); }
+.ribbon-tag { background: var(--lilac); color: var(--ink); border: 3px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); }
+.ch-img { border: 3px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); }
+.ch-emoji { background: var(--cream); border: 3px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); }
+
+/* murdoku */
+.hl { background: linear-gradient(transparent 60%, var(--sun) 60%); }
+.gen { border: 0; box-shadow: inset 0 0 0 2.5px var(--ink); background: #fff; }
+.gen .gi { background: var(--sun); border: 2px solid var(--ink); }
+.gen.ok { background: #d8f2e2; box-shadow: inset 0 0 0 2.5px var(--green); }
+.gen.ok .gi { background: var(--green); border-color: var(--green); }
+.gen.ko { background: #ffe0dc; box-shadow: inset 0 0 0 2.5px var(--red); }
+.gen.ko .gi { background: var(--red); border-color: var(--red); }
+.floor { box-shadow: 0 0 0 3px var(--ink), 5px 6px 0 3px var(--ink); }
+.pcard { border: 3px solid var(--ink); box-shadow: 4px 5px 0 var(--ink); background: var(--cream); }
+.pcard .pname { font-family: 'Bagel Fat One', sans-serif; font-weight: 400; font-size: 16px; color: var(--deep); }
+.pcard .ptext { background: #f1e6ff; }
+.pcard.vic .ptext { background: #ffe08a; }
+.pcard.on { transform: translateY(-3px) rotate(-1deg); box-shadow: 6px 8px 0 var(--ink); background: #fff3b8; opacity: 1; }
+.pcard.ok { background: #d8f2e2; box-shadow: 4px 5px 0 var(--green); border-color: var(--green); }
+.pcard.ko, .pcard.bad { background: #ffe0dc; box-shadow: 4px 5px 0 var(--red); border-color: var(--red); }
+.pcard.placed { opacity: 0.92; }
+.face { border: 2.5px solid var(--ink); }
+.chip { box-shadow: inset 0 0 0 2.5px var(--ink); background: #fff; }
+.chip.on { background: var(--deep); box-shadow: 3px 3px 0 var(--ink); }
+.mugshot { border: 5px solid var(--ink); box-shadow: 8px 9px 0 var(--ink); }
+.oops { color: var(--red); font-weight: 600; }
+
+/* wordle */
+.tile { background: rgba(255, 244, 224, 0.35); border: 2.5px solid rgba(42, 26, 74, 0.45); border-radius: 12px; font-family: 'Bagel Fat One', sans-serif; font-weight: 400; color: var(--ink); }
+.tile.filled { background: var(--cream); border-color: var(--ink); }
+.tile.correct { --bg: var(--green); --fc: #fff; }
+.tile.present { --bg: var(--sun); --fc: var(--ink); }
+.tile.absent { --bg: #7b6a9e; --fc: #fff; }
+@keyframes flip {
+  0% { transform: rotateX(0); background: var(--cream); border-color: var(--ink); color: var(--ink); }
+  49% { transform: rotateX(90deg); background: var(--cream); border-color: var(--ink); color: var(--ink); }
+  50% { background: var(--bg); border-color: var(--ink); color: var(--fc, #fff); }
+  100% { transform: rotateX(0); background: var(--bg); border-color: var(--ink); color: var(--fc, #fff); }
+}
+.toast { background: var(--cream); border: 3px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); color: var(--ink); }
+.hint { background: var(--cream); color: var(--ink); border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); }
+.key { background: var(--cream); border: 2.5px solid var(--ink); box-shadow: 0 3px 0 var(--ink); font-family: 'Fredoka', sans-serif; }
+.key.wide { background: var(--sun); }
+.key:active { transform: translateY(3px); box-shadow: 0 0 0 var(--ink); }
+.key.correct { background: var(--green); color: #fff; }
+.key.present { background: var(--sun); color: var(--ink); }
+.key.absent { background: #7b6a9e; color: #fff; opacity: 1; }
+
+/* puzzle */
+.puzzle-stats { color: var(--ink); font-weight: 600; }
+.puzzle-stats b { color: var(--ink); }
+.puzzle-stats .bar { background: rgba(255, 244, 224, 0.6); border: 2.5px solid var(--ink); height: 14px; }
+.puzzle-stats .bar i { background: var(--green); border-radius: 0; }
+.pz-board { background: var(--deep); box-shadow: 0 0 0 3px var(--ink), 7px 8px 0 3px var(--ink); }
+.pz-tile .face { box-shadow: inset 0 0 0 2.5px var(--cream), inset 0 0 0 4px var(--ink); }
+.pz-tile.sel .face { box-shadow: inset 0 0 0 4px var(--sun), inset 0 0 0 6px var(--ink); }
+.pz-tile.ok::after { background: var(--green); box-shadow: 0 0 0 2px var(--ink); }
+.pz-board.solved, .pz-board.open, .pz-board.revealed { box-shadow: 0 0 0 4px var(--ink), 8px 9px 0 4px var(--ink); animation: none; }
+.pz-board.solved .pz-tile .face { box-shadow: none; }
+
+/* final */
+.reveal-img { background: var(--lilac); border: 4px solid var(--ink); box-shadow: 8px 9px 0 var(--ink); border-radius: 28px; padding: 0; overflow: hidden; }
+.reveal-img img { border-radius: 0; }
+.polaroids img { border: 2px solid var(--ink); box-shadow: 4px 5px 0 var(--ink); }
+.sign { font-family: 'Bagel Fat One', sans-serif; font-style: normal; color: var(--mauve); font-size: 22px; }
+
+/* murdoku: ferramentas e anotações */
+.toolbar { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-bottom: 12px; }
+.tool { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 2px 5px; border-radius: 12px; background: #fff; border: 2.5px solid var(--ink); box-shadow: 0 3px 0 var(--ink); font-size: 10.5px; font-weight: 600; color: var(--ink); user-select: none; -webkit-user-select: none; touch-action: manipulation; transition: transform 0.12s var(--pop), box-shadow 0.12s, background 0.2s; }
+.tool .ti { font-size: 18px; line-height: 1.1; font-weight: 700; }
+.tool:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 0 0 var(--ink); }
+.tool.on { background: var(--sun); transform: translateY(1px); box-shadow: 0 2px 0 var(--ink); }
+.tool:disabled { opacity: 0.4; cursor: not-allowed; }
+.floor { touch-action: none; user-select: none; -webkit-user-select: none; cursor: pointer; }
+.fcell { cursor: pointer; -webkit-touch-callout: none; }
+.fcell.block { cursor: default; }
+.fcell > * { pointer-events: none; }
+.fcell .notes { position: absolute; inset: 2px; display: grid; grid-template-columns: repeat(var(--nc, 3), minmax(0, 1fr)); grid-auto-rows: min-content; gap: 2px; align-content: center; justify-content: center; }
+.fcell .nf { display: block; aspect-ratio: 1; border-radius: 50%; background-size: cover; background-repeat: no-repeat; background-color: #cfd8c9; border: 1px solid var(--ink); animation: drop 0.25s var(--pop); font-style: normal; }
+.fcell .nf.emo { display: grid; place-items: center; font-size: calc(var(--cs) * 0.17); line-height: 1; background: #eef0e6; }
+.fcell .xmark { color: var(--ink); opacity: 0.6; font-size: calc(var(--cs) * 0.6); font-weight: 700; line-height: 1; animation: drop 0.2s var(--pop); }
+.fcell.pressing::after { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 3px solid var(--ink); background: rgba(255, 201, 60, 0.55); animation: charge 0.42s linear forwards; }
+@keyframes charge { from { transform: scale(0.1); opacity: 0.9; } to { transform: scale(1.15); opacity: 1; } }
+.tiny-dark { font-size: 11.5px; color: var(--muted); text-align: right; flex: none; max-width: 110px; line-height: 1.2; }
+
+/* puzzle: acabamento mais limpo */
+.pz-board { background: var(--cream); box-shadow: 0 0 0 3px var(--ink), 6px 7px 0 3px var(--ink); }
+.pz-tile .face { box-shadow: inset 0 0 0 2px var(--cream); border-radius: 0; }
+.pz-tile.sel .face { box-shadow: inset 0 0 0 4px var(--sun), inset 0 0 0 6px var(--ink); }
+.pz-tile.ok::after { display: none; }
+.pz-board { border-radius: 14px; overflow: hidden; }
+.pz-tile.drag .face { box-shadow: inset 0 0 0 2px var(--cream), 0 18px 34px rgba(42, 26, 74, 0.45); }
+.pz-board.solved .pz-tile .face { box-shadow: none; }
+
+.polaroid { width: min(250px, 72%); margin: 22px auto 6px; padding: 8px 8px 26px; background: #fff; border: 2px solid var(--ink); box-shadow: 5px 6px 0 var(--ink); border-radius: 4px; transform: rotate(-2deg); }
+.polaroid img { width: 100%; display: block; border-radius: 2px; }
+.letter .lead:last-of-type { text-align: center; font-size: 28px; margin-bottom: 0; }
+
+/* talão da encomenda */
+.order { position: relative; margin: 8px auto 18px; max-width: 520px; background: var(--cream); border: 3px solid var(--ink); border-radius: 18px; box-shadow: 6px 7px 0 var(--ink); padding: 16px 18px 6px; text-align: left; animation: stageIn 0.8s 2.6s var(--ease) both; }
+.order::before, .order::after { content: ''; position: absolute; top: 46px; width: 18px; height: 18px; border-radius: 50%; background: #ff7a2f; border: 3px solid var(--ink); }
+.order::before { left: -12px; clip-path: inset(0 0 0 50%); }
+.order::after { right: -12px; clip-path: inset(0 50% 0 0); }
+.order-title { display: block; font-family: 'Bagel Fat One', sans-serif; font-size: 20px; color: var(--deep); padding-bottom: 12px; border-bottom: 3px dashed var(--ink); margin-bottom: 4px; }
+.order-row { display: flex; flex-direction: column; gap: 2px; padding: 10px 0; }
+.order-row + .order-row { border-top: 2px dotted rgba(42, 26, 74, 0.3); }
+.order-row span { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.order-row b { font-family: 'Bagel Fat One', sans-serif; font-weight: 400; font-size: 30px; letter-spacing: 0.08em; color: var(--ink); -webkit-user-select: text; user-select: text; }
+
+/* puzzle deslizante */
+.pz-board.slide { background: var(--deep); }
+.pz-tile { cursor: pointer; }
+.pz-tile.blank { opacity: 0; pointer-events: none; }
+.pz-tile:not(.blank) { transition: transform 0.28s var(--ease), opacity 0.6s; }
+.pz-tile.drag { transition: none; z-index: 5; }
+.pz-board.solved .pz-tile.flipped { transition: transform 0.28s var(--ease); }
+.pz-tile.movable .face { box-shadow: inset 0 0 0 2px var(--cream), inset 0 0 0 4px rgba(255, 201, 60, 0.9); }
