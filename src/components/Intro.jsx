@@ -14,7 +14,7 @@ export default function Intro({ onNext }) {
       <div className="gift-wrap">
         <div className="ribbon-tag">Para ti</div>
         <div className="gift-photo">
-          <img src={IMG.selfie} alt="" />
+          <img src={IMG.intro} alt="Selfie dos dois dentro de um carro" />
         </div>
       </div>
       <h1 className="display">

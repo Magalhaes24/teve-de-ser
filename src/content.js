@@ -8,6 +8,7 @@ export const IMG = {
   policia: './img/policia.webp',
   eu: './img/eu.webp',
   selfie: './img/selfie.webp',
+  intro: './img/intro.webp',
   carro: './img/carro.webp',
   tom: './img/tom.webp',
   dragao: './img/dragao.webp',
